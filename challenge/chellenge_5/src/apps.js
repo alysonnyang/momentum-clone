@@ -1,30 +1,48 @@
-import { visitFunctionBody } from "typescript";
 import "./styles.css";
 
 const selector = document.querySelector(".js-select");
 const paint = document.createElement("span");
 const SAVED_CNTRY = "country";
-function loadCountries() {
+
+
+function handleChange() {
     const selectedCountry = selector.value;
     paint.innerText = selectedCountry;
     document.body.appendChild(paint);
     localStorage.setItem(SAVED_CNTRY, selectedCountry);
 }
 
-function updateCountry() {
-    localStorage.removeItem(SAVED_CNTRY);
-    localStorage.setItem(SAVED_CNTRY, username);
-
-}
+function loadCountries() {
+    const savedCountry = localStorage.getItem(SAVED_CNTRY);
+    if(savedCountry !== null) {
+        const option = document.querySelector(`option[value="${selected}"]`);
+        option.savedCountry = true;
+    }
+};
 
 loadCountries();
-selector.addEventListener("change",loadCountries);
+selector.addEventListener("change",handleChange);
 
 
-const savedCountry = localStorage.getItem(SAVED_CNTRY);
-if(savedCountry===null){
-    loadCountries();
 
-}
+// [ SOLUTION ]
 
+// import "./styles.css";
 
+// const select = document.querySelector(".js-select");
+
+// function handleChange() {
+//   const selected = select.value;
+//   localStorage.setItem("country", selected);
+// }
+
+// function loadCountries() {
+//   const selected = localStorage.getItem("country");
+//   if (selected) {
+//     const option = document.querySelector(`option[value="${selected}"]`);
+//     option.selected = true;
+//   }
+// }
+
+// loadCountries();
+// select.addEventListener("change", handleChange);
