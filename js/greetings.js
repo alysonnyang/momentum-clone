@@ -16,8 +16,10 @@ function paintGreetings(username){
     greeting.innerText = `Hello ${username}!`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
     logoutBtn.classList.remove(HIDDEN_CLASSNAME);
-    logoutBtn.addEventListener("click",onLogoutClick);
     clock.classList.remove(HIDDEN_CLASSNAME);
+    quote.classList.remove(HIDDEN_CLASSNAME);
+    author.classList.remove(HIDDEN_CLASSNAME);
+    logoutBtn.addEventListener("click",onLogoutClick);   
 }
 
 function onLogoutClick(){
@@ -25,6 +27,8 @@ function onLogoutClick(){
     localStorage.removeItem(USERNAME_KEY);
     logoutBtn.classList.add(HIDDEN_CLASSNAME);
     clock.classList.add(HIDDEN_CLASSNAME);
+    quote.classList.add(HIDDEN_CLASSNAME);
+    author.classList.add(HIDDEN_CLASSNAME);
     paintLoginForm();
     
 }
