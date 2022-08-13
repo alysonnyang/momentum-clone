@@ -43,3 +43,31 @@ title.addEventListener("mouseenter",superEventHandler.mouseEnter);
 title.addEventListener("mouseleave",superEventHandler.mouseLeave);
 window.addEventListener("resize",superEventHandler.windowResize);
 document.addEventListener("contextmenu",superEventHandler.rightClick);
+
+// [ Solution ]
+// const superEventHandler = {
+//     handleContext: function() {
+//       title.innerHTML = "That was a right click!";
+//       title.style.color = colors[3];
+//     },
+//     handleEnter: function() {
+//       title.innerText = "The mouse is here!";
+//       title.style.color = colors[0];
+//     },
+//     handleLeave: function() {
+//       title.innerText = "The mouse is gone!";
+//       title.style.color = colors[1];
+//     },
+//     handleResize: function() {
+//       title.innerText = "You just resized!";
+//       title.style.color = colors[2];
+//     },
+//   };
+  
+//   function init() {
+//     title.addEventListener("mouseenter", superEventHandler.handleEnter);
+//     title.addEventListener("mouseleave", superEventHandler.handleLeave);
+//     window.addEventListener("resize", superEventHandler.handleResize);
+//     window.addEventListener("contextmenu", superEventHandler.handleContext);
+//   }
+  
